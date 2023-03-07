@@ -158,7 +158,7 @@ main {
 }
 
 section {
-   flex: 0 0 600px;
+   flex: 0 1 600px;
    display: flex;
    flex-direction: column;
    gap: 1vh;
@@ -172,7 +172,7 @@ section h3, section h4 {
 }
 
 aside {
-    flex: 0 0 250px;
+    flex: 0 1 250px;
 }
 #rightcol {
     display: flex;
@@ -192,6 +192,7 @@ aside h3 {
 
 blockquote {
     width: 80%;
+    margin: 1vh auto;
     padding: 10px;
     border-left: 25px solid steelblue;
     border-top: 3px solid steelblue;
@@ -237,17 +238,23 @@ footer p {
 =============================================================*/
 @media only screen and (max-width: 900px) {
     body {
-         font-size: 90%;
+        font-size: 90%;
     }
     main {
         flex-wrap: wrap;
     }
+    section {
+        flex: 0 1 55%;
+        justify-content: center;
+    }
     #leftcol {
         order: 3;
-        flex: 1 1 80%;
+        flex: 0 1 80%;
+        justify-content: center;
+        margin: 2vh 0;
     }
     #rightcol {
-        flex: 1 1 95%;
+        flex: 0 1 30%;
     }
     header, footer {
         border-radius: 0;
@@ -256,21 +263,27 @@ footer p {
 }
 
 @media only screen and (max-width: 767px) {
-    #nav_menu {
-        display: none;
-    }
-    #mobilemenu {
-        display: block;
-    }
-    .slicknav_menu {
-        background-color: steelblue;
-    }
-    #rightcol {
-        border-left: none;
-    }
+   section, #rightcol {
+    flex: 0 1 95%;
+   }
 }
 
 @media only screen and (max-width: 479px) {
-    
+    #nav_menu ul {
+        flex-direction: column;
+    }
+    #nav_menu ul li {
+        width: 100%;
+        text-align: center;
+    }
+    #nav_meu ul li:first-of-type {
+        display: none;
+    }
+    #rightcol {
+        flex: 0 1 100%;
+        margin: 2vh 0;
+        padding: 2vw;
+        border: none;
+        border-radius: 0%;
+    }
 }
-
